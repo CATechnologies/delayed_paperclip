@@ -3,7 +3,7 @@ require 'sidekiq'
 module DelayedPaperclip
   module Jobs
     class Sidekiq
-      include Sidekiq::Worker
+      include ::Sidekiq::Worker
       sidekiq_options :queue => :paperclip
 
       def self.enqueue_delayed_paperclip(instance_klass, instance_id, attachment_name)
